@@ -5,7 +5,9 @@ const mongoose = require("mongoose");
 const app = express();
 
 mongoose
-  .connect("mongodb://localhost:27017/job_app")
+  .connect(
+    "mongodb+srv://kamalbisht819:yjdgLlcfuySJVs4A@cluster0.8n4anqw.mongodb.net/"
+  )
   .then(() => console.log("DB connection established and connected"))
   .catch((err) => console.error(err));
 
