@@ -1,13 +1,13 @@
 const express = require("express");
 const jobRoutes = require("./routes/job");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
 const app = express();
-
+dotenv.config();
+// console.log(process.env.DATABASE_URL); use dotenv modeule to acces the env file locally
 mongoose
-  .connect(
-    "mongodb+srv://kamalbisht819:yjdgLlcfuySJVs4A@cluster0.8n4anqw.mongodb.net/"
-  )
+  .connect(process.env.DATABASE_URL)
   .then(() => console.log("DB connection established and connected"))
   .catch((err) => console.error(err));
 
